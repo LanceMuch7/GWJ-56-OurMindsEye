@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ca4oo0leohe43"]
+
+[ext_resource type="Texture2D" uid="uid://ccn623jpx1dmm" path="res://materials/dry_ground_rocks_1k.gltf/textures/dry_ground_rocks_diff_1k.jpg" id="1_0a00n"]
+[ext_resource type="Texture2D" uid="uid://da86vh7qcubku" path="res://materials/dry_ground_rocks_1k.gltf/textures/dry_ground_rocks_nor_gl_1k.jpg" id="2_d8yst"]
+[ext_resource type="Texture2D" uid="uid://di4cwhu4i8ob" path="res://materials/dry_ground_rocks_1k.gltf/textures/dry_ground_rocks_rough_1k.jpg" id="3_5xlcj"]
+
+[resource]
+albedo_texture = ExtResource("1_0a00n")
+roughness_texture = ExtResource("3_5xlcj")
+normal_enabled = true
+normal_texture = ExtResource("2_d8yst")

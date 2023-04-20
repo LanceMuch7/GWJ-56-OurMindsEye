@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=3 uid="uid://dghutdblpc3n8"]
+
+[ext_resource type="PackedScene" uid="uid://bjhxxp2ugcnu2" path="res://src/girl.tscn" id="2_7pgxt"]
+[ext_resource type="PackedScene" uid="uid://14e67d0dq1ca" path="res://src/UI/PauseMenu.tscn" id="3_p6wnb"]
+[ext_resource type="Texture2D" uid="uid://basbimsjtkmhf" path="res://images/sprites/garden_sign_crop_01a_g1.png" id="4_fjlv1"]
+[ext_resource type="Texture2D" uid="uid://b3adik48r85p4" path="res://images/sprites/firebog_puddle_1.png" id="5_annut"]
+[ext_resource type="Texture2D" uid="uid://bgvko4mdkyl07" path="res://images/sprites/firebog_planter_box_1x3.png" id="6_a5vcp"]
+[ext_resource type="Texture2D" uid="uid://hml0628pxajt" path="res://images/sprites/firebean_2.png" id="8_nauw8"]
+[ext_resource type="Texture2D" uid="uid://dxfbibe8uv5sw" path="res://images/sprites/decor_plants2.png" id="9_56e2r"]
+[ext_resource type="Script" path="res://src/structure/Door.gd" id="9_npod1"]
+[ext_resource type="Texture2D" uid="uid://dvetqjuxikeq1" path="res://images/sprites/grass_solid_5_1.png" id="10_uavlm"]
+[ext_resource type="Texture2D" uid="uid://ctn4a0duw2t7w" path="res://images/pad_01.png" id="11_0p7jt"]
+
+[sub_resource type="Gradient" id="Gradient_dd6db"]
+colors = PackedColorArray(0, 0, 0, 1, 0.631373, 0.811765, 0.831373, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fmxyd"]
+gradient = SubResource("Gradient_dd6db")
+fill_from = Vector2(0.972477, 0.362385)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_47mph"]
+vertices = PackedVector2Array(-268, -72, -339, -94, -303, -117, -213, -102, -102, 22, -23, -25, 292, 95, 393, 94, 379, 145, 234, 129, 135, 140, 31, 128, -34, 106, -69, 87, -98, 63, 80, -45, 194, -18, 263, 8, 293, 47)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(6, 9, 10, 11, 12, 13, 14, 4, 5, 15, 16, 17, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-102, 22, -98, 63, -69, 87, -34, 106, 31, 128, 135, 140, 234, 129, 379, 145, 393, 94, 292, 95, 293, 47, 263, 8, 194, -18, 80, -45, -23, -25, -213, -102, -303, -117, -339, -94, -268, -72)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p6uk"]
+size = Vector2(166, 84)
+
+[node name="Location" type="Node2D"]
+
+[node name="bg" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+scale = Vector2(15.3438, 8.40625)
+texture = SubResource("GradientTexture2D_fmxyd")
+
+[node name="Pad01" type="Sprite2D" parent="bg"]
+texture = ExtResource("11_0p7jt")
+
+[node name="GardenSignCrop01aG1" type="Sprite2D" parent="bg"]
+position = Vector2(115, -44)
+scale = Vector2(0.77451, 0.77451)
+texture = ExtResource("4_fjlv1")
+
+[node name="FirebogPuddle1" type="Sprite2D" parent="bg"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(-343, 50)
+scale = Vector2(0.73913, 1.78261)
+texture = ExtResource("5_annut")
+
+[node name="FirebogPuddle2" type="Sprite2D" parent="bg"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(-215, 196)
+scale = Vector2(1.05559, 2.65217)
+texture = ExtResource("5_annut")
+
+[node name="FirebogPuddle3" type="Sprite2D" parent="bg"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(71.144, -123.5)
+scale = Vector2(0.395079, 0.673913)
+texture = ExtResource("5_annut")
+
+[node name="FirebogPlanterBox1x3" type="Sprite2D" parent="bg"]
+position = Vector2(206, 38)
+scale = Vector2(0.439394, 0.439394)
+texture = ExtResource("6_a5vcp")
+
+[node name="Firebean2" type="Sprite2D" parent="bg"]
+position = Vector2(197, -6.00001)
+scale = Vector2(0.357143, 0.357143)
+texture = ExtResource("8_nauw8")
+
+[node name="DecorPlants2" type="Sprite2D" parent="bg"]
+position = Vector2(23, -41)
+scale = Vector2(0.412921, 0.412921)
+texture = ExtResource("9_56e2r")
+
+[node name="GrassSolid51" type="Sprite2D" parent="bg"]
+position = Vector2(104.033, 4.25001)
+scale = Vector2(0.20283, 0.20283)
+texture = ExtResource("10_uavlm")
+
+[node name="Polygon2D" type="Polygon2D" parent="bg"]
+position = Vector2(-357, -97)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(-7, -17, -57, 0, 25, 4, 97, 32, 175, 74, 251, 133, 335, 72, 242, 28, 159, -2, 59, -20)
+
+[node name="Polygon2D2" type="Polygon2D" parent="bg"]
+position = Vector2(271, 121)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(20, -27, -51, 12, 33, 17, 113, 34, 176, 64, 220, 103, 234, -4, 181, -19, 122, -27, 58, -30)
+
+[node name="props" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_47mph")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Girl" parent="." instance=ExtResource("2_7pgxt")]
+
+[node name="fore" type="Node2D" parent="."]
+
+[node name="door" type="Area2D" parent="fore"]
+position = Vector2(-360, -121)
+script = ExtResource("9_npod1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fore/door"]
+shape = SubResource("RectangleShape2D_5p6uk")
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_p6wnb")]
+visible = false
+
+[connection signal="mouse_entered" from="fore/door" to="fore/door" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="fore/door" to="fore/door" method="_onMouseExited"]

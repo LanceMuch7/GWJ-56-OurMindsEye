@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cveoffam1s28"]
+
+[ext_resource type="Texture2D" uid="uid://dcyrlohhdongw" path="res://materials/mud_cracked_dry_03_1k.gltf/textures/mud_cracked_dry_03_diff_1k.jpg" id="1_y2pmh"]
+[ext_resource type="Texture2D" uid="uid://btb7bvsr7vleg" path="res://materials/mud_cracked_dry_03_1k.gltf/textures/mud_cracked_dry_03_nor_gl_1k.jpg" id="2_do5uh"]
+[ext_resource type="Texture2D" uid="uid://ddthkbabjyyou" path="res://materials/mud_cracked_dry_03_1k.gltf/textures/mud_cracked_dry_03_rough_1k.jpg" id="3_41fxd"]
+
+[resource]
+albedo_texture = ExtResource("1_y2pmh")
+roughness_texture = ExtResource("3_41fxd")
+normal_enabled = true
+normal_texture = ExtResource("2_do5uh")
