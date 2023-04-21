@@ -14,8 +14,7 @@ const Cursors = {
 }
 var Chapter : PackedScene
 var ChapInst
-var CurrentScene
-var Player
+var CurrentScene:Node2D
 
 
 func LoadScene(path:String):

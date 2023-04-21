@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Enums="*res://src/Enums.gd"
 GameState="*res://src/GameState.gd"
+Player="*res://src/Player.gd"
 
 [display]
 

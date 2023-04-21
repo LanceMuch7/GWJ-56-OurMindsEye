@@ -2,16 +2,16 @@ extends Interactible
 
 
 @export_file var dest:String
-@export var sfxName:String
+@export_file var sfxName:String
 #@export_enum var sfxType:AudioMgr.AudioType = AudioMgr.AudioType.WAV
 
 var conditions : Array = []
 
 
 ####		Built-in Functions			########################################
-#func _ready():
-#	if sfxName.length() > 0:
-#		$Sound.stream = load("res://Audio/")
+func _ready():
+	if sfxName.length() > 0:
+		$Sound.stream = load(sfxName)
 
 
 ####		Public Functions			########################################
@@ -32,7 +32,7 @@ func Use():
 		$Sound.play()
 	
 	Input.set_custom_mouse_cursor(GameState.Cursors[Enums.CURSORS.Default])
-	GameState.LoadScene(dest)
+	Player.SelectObject(self)
 
 func HandleInput(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and IsOpen():
@@ -40,9 +40,16 @@ func HandleInput(viewport, event, shape_idx):
 
 
 ####		Private Functions			########################################
+func _enter(body):
+	#@TODO: if body is player, else store NPC location in GameState
+	GameState.LoadScene(dest)
+
 ####		Signal Listeners			########################################
 func _onMouseEntered():
 	super._onMouseEntered()
 
 func _onMouseExited():
 	super._onMouseExited()
+
+func _onBodyEntered(body):
+	pass # Replace with function body.

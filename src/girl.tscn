@@ -7,17 +7,21 @@
 height = 60.0
 
 [node name="Girl" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_a5jgo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_fpyit")
 
 [node name="body" type="Node2D" parent="."]
+position = Vector2(0, -67)
 
 [node name="chest" type="Sprite2D" parent="body"]
-scale = Vector2(0.187221, 0.187221)
+position = Vector2(0, 16)
+scale = Vector2(0.112908, 0.112908)
 texture = ExtResource("2_00no7")
 
 [node name="anim" type="AnimationPlayer" parent="body"]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="navAgent2D" type="NavigationAgent2D" parent="."]
