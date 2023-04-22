@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dlwjpkb4oluu6"]
+[gd_scene load_steps=34 format=3 uid="uid://dlwjpkb4oluu6"]
 
 [ext_resource type="PackedScene" uid="uid://dghutdblpc3n8" path="res://src/structure/location.tscn" id="1_snt2o"]
 [ext_resource type="Texture2D" uid="uid://dxqe72uehmpyk" path="res://images/pad_07.png" id="2_hvvsb"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://da0gchkxrupc0" path="res://images/sprites/soil_debris3.png" id="26_naoit"]
 [ext_resource type="Texture2D" uid="uid://dik5a5ok6sudb" path="res://images/sprites/stone_moss_1.png" id="27_pqcna"]
 [ext_resource type="Texture2D" uid="uid://b785rny67meqc" path="res://images/sprites/theEyes.png" id="28_adubc"]
+[ext_resource type="Texture2D" uid="uid://bb4xiekgb2cut" path="res://images/sprites/bridge.png" id="29_3oao6"]
 
 [sub_resource type="Gradient" id="Gradient_dd6db"]
 colors = PackedColorArray(0, 0, 0, 1, 0.631373, 0.811765, 0.831373, 1)
@@ -123,6 +124,17 @@ position = Vector2(319, -25)
 scale = Vector2(0.23, 0.23)
 texture = ExtResource("28_adubc")
 
+[node name="Bridge" type="Sprite2D" parent="bg" index="16"]
+position = Vector2(105.271, 49.1907)
+rotation = 2.76244
+scale = Vector2(0.242573, -0.464277)
+texture = ExtResource("29_3oao6")
+
+[node name="GroundEntrance2" type="Sprite2D" parent="bg" index="17"]
+position = Vector2(173.603, -43.25)
+scale = Vector2(0.531746, 0.531746)
+texture = ExtResource("11_lb7qi")
+
 [node name="NavigationRegion2D" parent="." index="2"]
 navigation_polygon = SubResource("NavigationPolygon_jkdxr")
 
@@ -130,9 +142,11 @@ navigation_polygon = SubResource("NavigationPolygon_jkdxr")
 navigation_polygon = SubResource("NavigationPolygon_kj6ms")
 
 [node name="NavigationLink2D" type="NavigationLink2D" parent="." index="4"]
-position = Vector2(102, 42)
-start_position = Vector2(35, -12)
-end_position = Vector2(-29, 16)
+position = Vector2(124, 59)
+start_position = Vector2(52, -19)
+end_position = Vector2(-68, 15)
+enter_cost = 2000.0
+travel_cost = 20.0
 
 [node name="door" type="Area2D" parent="." index="5"]
 position = Vector2(-409, -6)
@@ -147,6 +161,7 @@ polygon = PackedVector2Array(-74, -95, -73, 78, -20, 74, 13, -12, 34, -75, -15, 
 position = Vector2(75, -5)
 
 [node name="door2" type="Area2D" parent="." index="6"]
+visible = false
 position = Vector2(318, -22)
 collision_mask = 2
 script = ExtResource("3_qvlfw")
@@ -169,72 +184,67 @@ rotation = -0.0682746
 scale = Vector2(0.383721, 0.383721)
 texture = ExtResource("4_mpj64")
 
-[node name="GroundEntrance2" type="Sprite2D" parent="fore" index="2"]
-position = Vector2(173.603, -43.25)
-scale = Vector2(0.531746, 0.531746)
-texture = ExtResource("11_lb7qi")
-
-[node name="GroundSpots3" type="Sprite2D" parent="fore" index="3"]
+[node name="GroundSpots3" type="Sprite2D" parent="fore" index="2"]
 position = Vector2(107, 240)
 texture = ExtResource("12_s5x37")
 
-[node name="BottletreeBody4" type="Sprite2D" parent="fore" index="4"]
+[node name="BottletreeBody4" type="Sprite2D" parent="fore" index="3"]
 position = Vector2(-230, 186)
 rotation = -1.12959
 scale = Vector2(0.365591, 0.365591)
 texture = ExtResource("5_7ynib")
 
-[node name="FirebogLadderTileCap0Vine" type="Sprite2D" parent="fore" index="5"]
+[node name="FirebogLadderTileCap0Vine" type="Sprite2D" parent="fore" index="4"]
 position = Vector2(-36, 183)
 scale = Vector2(0.555556, 0.555556)
 texture = ExtResource("14_8iejj")
 
-[node name="GrassTransparent" type="Sprite2D" parent="fore" index="6"]
+[node name="GrassTransparent" type="Sprite2D" parent="fore" index="5"]
 position = Vector2(-453, 219)
 texture = ExtResource("15_6up48")
 
-[node name="GrassTransparent2" type="Sprite2D" parent="fore" index="7"]
+[node name="GrassTransparent2" type="Sprite2D" parent="fore" index="6"]
 position = Vector2(420, 91)
 texture = ExtResource("15_6up48")
 
-[node name="GroundSpots1" type="Sprite2D" parent="fore" index="8"]
+[node name="GroundSpots1" type="Sprite2D" parent="fore" index="7"]
 position = Vector2(246, 178)
 texture = ExtResource("16_cg0eg")
 
-[node name="GroundSpots5" type="Sprite2D" parent="fore" index="9"]
+[node name="GroundSpots5" type="Sprite2D" parent="fore" index="8"]
 position = Vector2(318, 106)
 texture = ExtResource("17_wt7cd")
 
-[node name="Jar3" type="Sprite2D" parent="fore" index="10"]
+[node name="Jar3" type="Sprite2D" parent="fore" index="9"]
 position = Vector2(-34.5, 140.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_ueqp5")
 
-[node name="LegsFront1" type="Sprite2D" parent="fore" index="11"]
+[node name="LegsFront1" type="Sprite2D" parent="fore" index="10"]
 position = Vector2(296.938, 45.8259)
 scale = Vector2(0.246658, 0.246658)
 texture = ExtResource("20_nb0fx")
 
-[node name="LegsBack2Set1" type="Sprite2D" parent="fore" index="12"]
+[node name="LegsBack2Set1" type="Sprite2D" parent="fore" index="11"]
 position = Vector2(247.676, 132.563)
 scale = Vector2(0.323606, 0.323606)
 texture = ExtResource("21_3rykj")
 
-[node name="LegsFrontSet1" type="Sprite2D" parent="fore" index="13"]
+[node name="LegsFrontSet1" type="Sprite2D" parent="fore" index="12"]
 position = Vector2(81.7763, 210)
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("22_7l7qy")
 
-[node name="LegsMossNoBase" type="Sprite2D" parent="fore" index="14"]
+[node name="LegsMossNoBase" type="Sprite2D" parent="fore" index="13"]
 position = Vector2(-394, 67)
 scale = Vector2(0.240566, 0.240566)
 texture = ExtResource("23_dbxue")
 
-[node name="SoilDebris2" type="Sprite2D" parent="fore" index="15"]
+[node name="SoilDebris2" type="Sprite2D" parent="fore" index="14"]
 position = Vector2(-422, 255)
 texture = ExtResource("25_igap5")
 
-[node name="SoilDebris3" type="Sprite2D" parent="fore" index="16"]
+[node name="SoilDebris3" type="Sprite2D" parent="fore" index="15"]
 position = Vector2(-65, 210)
 texture = ExtResource("26_naoit")
 

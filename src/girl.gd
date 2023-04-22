@@ -27,9 +27,15 @@ func SetDestination(vec:Vector2):
 	destination = vec
 	$navAgent2D.target_position = vec
 
+func GetTarget():
+	return target
+
 func SetTarget(tgt:Node2D):
 	target = tgt
 	SetDestination(tgt.global_position)
+
+func ClearTarget():
+	target = null
 
 # Used to set start points when entering a Location.
 # BREAKS KINEMATICS IF OVERUSED.

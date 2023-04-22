@@ -50,4 +50,5 @@ func _onBodyEntered(body):
 	if dest.get_file().length() == 0:
 		push_warning("Missing door destination: \"" + dest + "\"")
 		return
-	GameState.LoadScene(dest, destDoor)
+	if body.has_method("GetTarget") and body.GetTarget() == self:
+		GameState.LoadScene(dest, destDoor)
