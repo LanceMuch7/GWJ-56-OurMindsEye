@@ -3,9 +3,9 @@ extends Node
 var character:CharacterBody2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+#func _ready():
+#	character = charResource.instantiate()
+#	add_sibling(character)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -17,8 +17,7 @@ func Select(loc:Vector2):
 
 func SelectObject(tgt:Node2D):
 	if is_instance_valid(character):
-		#@TODO: ...what? There was something I'm sure...
-		character.SetDestination(tgt.global_position)
+		character.setTarget(tgt)
 
 func SetCharacter(c:CharacterBody2D):
 	character = c

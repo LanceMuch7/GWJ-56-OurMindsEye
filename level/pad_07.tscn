@@ -1,0 +1,248 @@
+[gd_scene load_steps=33 format=3 uid="uid://dlwjpkb4oluu6"]
+
+[ext_resource type="PackedScene" uid="uid://dghutdblpc3n8" path="res://src/structure/location.tscn" id="1_snt2o"]
+[ext_resource type="Texture2D" uid="uid://dxqe72uehmpyk" path="res://images/pad_07.png" id="2_hvvsb"]
+[ext_resource type="Texture2D" uid="uid://dxc2h7kgcsoid" path="res://images/sprites/sky_aqua_line1.png" id="3_0e2ue"]
+[ext_resource type="Script" path="res://src/structure/Door.gd" id="3_qvlfw"]
+[ext_resource type="Texture2D" uid="uid://snl2ws8jhn65" path="res://images/sprites/cattail_1.png" id="4_mpj64"]
+[ext_resource type="Texture2D" uid="uid://xwplvdl4vqv0" path="res://images/sprites/sky_aqua_line2.png" id="4_unj1h"]
+[ext_resource type="Texture2D" uid="uid://dpsbjeenr42qk" path="res://images/sprites/bottletree_body4.png" id="5_7ynib"]
+[ext_resource type="Texture2D" uid="uid://df3iu3gw6lour" path="res://images/sprites/coalleaf_1.png" id="5_th1e3"]
+[ext_resource type="Texture2D" uid="uid://dxfbibe8uv5sw" path="res://images/sprites/decor_plants2.png" id="6_c7vnl"]
+[ext_resource type="Texture2D" uid="uid://br3u8c52souor" path="res://images/sprites/firebog_sign_blank_plank.png" id="7_at32m"]
+[ext_resource type="Texture2D" uid="uid://4a7dks7n5wgm" path="res://images/sprites/mushrooms.png" id="8_chjnx"]
+[ext_resource type="Texture2D" uid="uid://cevvfhevpn6mx" path="res://images/sprites/ground_entrance2.png" id="11_lb7qi"]
+[ext_resource type="Texture2D" uid="uid://b2e1lh3hvcrgy" path="res://images/sprites/ground_spots3.png" id="12_s5x37"]
+[ext_resource type="Texture2D" uid="uid://r3yvfigtendl" path="res://images/sprites/firebog_ladder_tile_cap_0_vine.png" id="14_8iejj"]
+[ext_resource type="Texture2D" uid="uid://cdp40krv1q5xx" path="res://images/sprites/grass_transparent.png" id="15_6up48"]
+[ext_resource type="Texture2D" uid="uid://ckcsau27lj2g5" path="res://images/sprites/ground_spots1.png" id="16_cg0eg"]
+[ext_resource type="Texture2D" uid="uid://cqjwxanhbedcr" path="res://images/sprites/ground_spots5.png" id="17_wt7cd"]
+[ext_resource type="Texture2D" uid="uid://cn1rscom78rov" path="res://images/sprites/hearth_plain.png" id="18_o1qk7"]
+[ext_resource type="Texture2D" uid="uid://bhqkrd6rhwjal" path="res://images/sprites/jar3.png" id="19_ueqp5"]
+[ext_resource type="Texture2D" uid="uid://bj6snfbe50odk" path="res://images/sprites/legs_front_1.png" id="20_nb0fx"]
+[ext_resource type="Texture2D" uid="uid://i8t4o5duj3kt" path="res://images/sprites/legs_back2_set_1.png" id="21_3rykj"]
+[ext_resource type="Texture2D" uid="uid://bbuc018js5tux" path="res://images/sprites/legs_front_set1.png" id="22_7l7qy"]
+[ext_resource type="Texture2D" uid="uid://17w5jxe018pa" path="res://images/sprites/legs_moss_noBase.png" id="23_dbxue"]
+[ext_resource type="Texture2D" uid="uid://4ceutbc10mjf" path="res://images/sprites/sky_aqua_line3.png" id="24_7307f"]
+[ext_resource type="Texture2D" uid="uid://ky4qw361r0ur" path="res://images/sprites/soil_debris2.png" id="25_igap5"]
+[ext_resource type="Texture2D" uid="uid://da0gchkxrupc0" path="res://images/sprites/soil_debris3.png" id="26_naoit"]
+[ext_resource type="Texture2D" uid="uid://dik5a5ok6sudb" path="res://images/sprites/stone_moss_1.png" id="27_pqcna"]
+[ext_resource type="Texture2D" uid="uid://b785rny67meqc" path="res://images/sprites/theEyes.png" id="28_adubc"]
+
+[sub_resource type="Gradient" id="Gradient_dd6db"]
+colors = PackedColorArray(0, 0, 0, 1, 0.631373, 0.811765, 0.831373, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bassi"]
+gradient = SubResource("Gradient_dd6db")
+fill_from = Vector2(0.885321, 0.605505)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jkdxr"]
+vertices = PackedVector2Array(-125, 52, 13, 37, 164, 102, -17, 166, -85, 128, -338, -23, -402, -33, -404, -42, -334, -33, -315, -27, -286, 79, -199, 158, -381, 200, -397, 109, -357, 93, -331, 50, -388, 32, -359, 21, -383, 12, -336, -8, -338, 4, -308, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(10, 0, 4, 11, 12, 13, 14), PackedInt32Array(15, 10, 14, 16), PackedInt32Array(17, 15, 16, 18), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 20, 19, 9), PackedInt32Array(9, 19, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-381, 200, -199, 158, -85, 128, -17, 166, 164, 102, 13, 37, -125, 52, -286, 79, -331, 50, -359, 21, -338, 4, -308, -8, -315, -27, -334, -33, -404, -42, -402, -33, -338, -23, -336, -8, -383, 12, -388, 32, -357, 93, -397, 109)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kj6ms"]
+vertices = PackedVector2Array(189, 56, 108, 14, 328, -14, 316, 36, 374, 56, 478, 22, 478, 39)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(108, 14, 189, 56, 316, 36, 374, 56, 478, 39, 478, 22, 328, -14)])
+
+[node name="pad_01" instance=ExtResource("1_snt2o")]
+
+[node name="Sky" parent="bg" index="0"]
+texture = SubResource("GradientTexture2D_bassi")
+
+[node name="Pad" type="Sprite2D" parent="bg" index="1"]
+texture = ExtResource("2_hvvsb")
+
+[node name="SkyAquaLine1" type="Sprite2D" parent="bg" index="2"]
+position = Vector2(1, -222)
+scale = Vector2(0.923077, 0.923077)
+texture = ExtResource("3_0e2ue")
+
+[node name="SkyAquaLine2" type="Sprite2D" parent="bg" index="3"]
+position = Vector2(228, -154)
+scale = Vector2(0.692308, 0.692308)
+texture = ExtResource("4_unj1h")
+
+[node name="SkyAquaLine3" type="Sprite2D" parent="bg" index="4"]
+position = Vector2(-161, -95)
+scale = Vector2(0.709677, 0.709677)
+texture = ExtResource("24_7307f")
+
+[node name="Polygon2D" type="Polygon2D" parent="bg" index="5"]
+position = Vector2(-609, -30)
+color = Color(0.662745, 0.482353, 0.435294, 1)
+polygon = PackedVector2Array(294, 0, 122, -24, 123, -18, 273, 5, 271, 24, 218, 41, 218, 47, 227, 51, 216, 60, 220, 66, 216, 73, 244, 125, 326, 102, 260, 59, 256, 56, 260, 51, 254, 49, 264, 41, 264, 35, 305, 24)
+
+[node name="Coalleaf1" type="Sprite2D" parent="bg" index="6"]
+position = Vector2(109, 188)
+texture = ExtResource("5_th1e3")
+
+[node name="Coalleaf2" type="Sprite2D" parent="bg" index="7"]
+position = Vector2(161.5, 134)
+rotation = -0.412439
+scale = Vector2(0.755487, 1.14794)
+texture = ExtResource("5_th1e3")
+
+[node name="DecorPlants2" type="Sprite2D" parent="bg" index="8"]
+position = Vector2(132, -7)
+scale = Vector2(0.432584, 0.432584)
+texture = ExtResource("6_c7vnl")
+
+[node name="FirebogSignBlankPlank" type="Sprite2D" parent="bg" index="9"]
+position = Vector2(-369, 34)
+scale = Vector2(0.163389, 0.102528)
+texture = ExtResource("7_at32m")
+
+[node name="FirebogSignBlankPlank2" type="Sprite2D" parent="bg" index="10"]
+position = Vector2(-369, 30)
+scale = Vector2(0.163389, 0.102528)
+texture = ExtResource("7_at32m")
+
+[node name="FirebogSignBlankPlank3" type="Sprite2D" parent="bg" index="11"]
+position = Vector2(-369, 25)
+scale = Vector2(0.163389, 0.102528)
+texture = ExtResource("7_at32m")
+
+[node name="Mushrooms" type="Sprite2D" parent="bg" index="12"]
+position = Vector2(58.375, 20.9294)
+scale = Vector2(0.307971, 0.307971)
+texture = ExtResource("8_chjnx")
+
+[node name="StoneMoss1" type="Sprite2D" parent="bg" index="13"]
+position = Vector2(-201, 16)
+texture = ExtResource("27_pqcna")
+
+[node name="HearthPlain" type="Sprite2D" parent="bg" index="14"]
+position = Vector2(320, -61)
+scale = Vector2(0.287715, 0.287715)
+texture = ExtResource("18_o1qk7")
+
+[node name="TheEyes" type="Sprite2D" parent="bg" index="15"]
+position = Vector2(319, -25)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("28_adubc")
+
+[node name="NavigationRegion2D" parent="." index="2"]
+navigation_polygon = SubResource("NavigationPolygon_jkdxr")
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="." index="3"]
+navigation_polygon = SubResource("NavigationPolygon_kj6ms")
+
+[node name="NavigationLink2D" type="NavigationLink2D" parent="." index="4"]
+position = Vector2(102, 42)
+start_position = Vector2(35, -12)
+end_position = Vector2(-29, 16)
+
+[node name="door" type="Area2D" parent="." index="5"]
+position = Vector2(-409, -6)
+collision_mask = 2
+script = ExtResource("3_qvlfw")
+dest = "res://level/pad_02.tscn"
+
+[node name="col" type="CollisionPolygon2D" parent="door" index="0"]
+polygon = PackedVector2Array(-74, -95, -73, 78, -20, 74, 13, -12, 34, -75, -15, -92)
+
+[node name="spawn" type="Marker2D" parent="door" index="1"]
+position = Vector2(75, -5)
+
+[node name="door2" type="Area2D" parent="." index="6"]
+position = Vector2(318, -22)
+collision_mask = 2
+script = ExtResource("3_qvlfw")
+
+[node name="col" type="CollisionPolygon2D" parent="door2" index="0"]
+build_mode = 1
+polygon = PackedVector2Array(4, -32, -22, -9, -17, 22, 25, 24, 30, -7)
+
+[node name="spawn" type="Marker2D" parent="door2" index="1"]
+position = Vector2(-54, 33)
+
+[node name="Cattail1" type="Sprite2D" parent="fore" index="0"]
+position = Vector2(-139, 138)
+scale = Vector2(0.383721, 0.383721)
+texture = ExtResource("4_mpj64")
+
+[node name="Cattail2" type="Sprite2D" parent="fore" index="1"]
+position = Vector2(-180, 146)
+rotation = -0.0682746
+scale = Vector2(0.383721, 0.383721)
+texture = ExtResource("4_mpj64")
+
+[node name="GroundEntrance2" type="Sprite2D" parent="fore" index="2"]
+position = Vector2(173.603, -43.25)
+scale = Vector2(0.531746, 0.531746)
+texture = ExtResource("11_lb7qi")
+
+[node name="GroundSpots3" type="Sprite2D" parent="fore" index="3"]
+position = Vector2(107, 240)
+texture = ExtResource("12_s5x37")
+
+[node name="BottletreeBody4" type="Sprite2D" parent="fore" index="4"]
+position = Vector2(-230, 186)
+rotation = -1.12959
+scale = Vector2(0.365591, 0.365591)
+texture = ExtResource("5_7ynib")
+
+[node name="FirebogLadderTileCap0Vine" type="Sprite2D" parent="fore" index="5"]
+position = Vector2(-36, 183)
+scale = Vector2(0.555556, 0.555556)
+texture = ExtResource("14_8iejj")
+
+[node name="GrassTransparent" type="Sprite2D" parent="fore" index="6"]
+position = Vector2(-453, 219)
+texture = ExtResource("15_6up48")
+
+[node name="GrassTransparent2" type="Sprite2D" parent="fore" index="7"]
+position = Vector2(420, 91)
+texture = ExtResource("15_6up48")
+
+[node name="GroundSpots1" type="Sprite2D" parent="fore" index="8"]
+position = Vector2(246, 178)
+texture = ExtResource("16_cg0eg")
+
+[node name="GroundSpots5" type="Sprite2D" parent="fore" index="9"]
+position = Vector2(318, 106)
+texture = ExtResource("17_wt7cd")
+
+[node name="Jar3" type="Sprite2D" parent="fore" index="10"]
+position = Vector2(-34.5, 140.5)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("19_ueqp5")
+
+[node name="LegsFront1" type="Sprite2D" parent="fore" index="11"]
+position = Vector2(296.938, 45.8259)
+scale = Vector2(0.246658, 0.246658)
+texture = ExtResource("20_nb0fx")
+
+[node name="LegsBack2Set1" type="Sprite2D" parent="fore" index="12"]
+position = Vector2(247.676, 132.563)
+scale = Vector2(0.323606, 0.323606)
+texture = ExtResource("21_3rykj")
+
+[node name="LegsFrontSet1" type="Sprite2D" parent="fore" index="13"]
+position = Vector2(81.7763, 210)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("22_7l7qy")
+
+[node name="LegsMossNoBase" type="Sprite2D" parent="fore" index="14"]
+position = Vector2(-394, 67)
+scale = Vector2(0.240566, 0.240566)
+texture = ExtResource("23_dbxue")
+
+[node name="SoilDebris2" type="Sprite2D" parent="fore" index="15"]
+position = Vector2(-422, 255)
+texture = ExtResource("25_igap5")
+
+[node name="SoilDebris3" type="Sprite2D" parent="fore" index="16"]
+position = Vector2(-65, 210)
+texture = ExtResource("26_naoit")
+
+[connection signal="body_entered" from="door" to="door" method="_onBodyEntered"]
+[connection signal="input_event" from="door" to="door" method="HandleInput"]
+[connection signal="mouse_entered" from="door" to="door" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door" to="door" method="_onMouseExited"]
+[connection signal="body_entered" from="door2" to="door2" method="_onBodyEntered"]
+[connection signal="input_event" from="door2" to="door2" method="HandleInput"]
+[connection signal="mouse_entered" from="door2" to="door2" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door2" to="door2" method="_onMouseExited"]

@@ -4,6 +4,7 @@ var isPaused = false
 
 
 func _ready():
+	hide()
 	set_process_input(true)
 
 func _input(event):

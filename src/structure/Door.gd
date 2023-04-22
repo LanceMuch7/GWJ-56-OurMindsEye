@@ -2,10 +2,9 @@ extends Interactible
 
 
 @export_file var dest:String
+@export var destDoor:String
 @export_file var sfxName:String
-#@export_enum var sfxType:AudioMgr.AudioType = AudioMgr.AudioType.WAV
-
-var conditions : Array = []
+var conditions : Array = []		#Locked/unlocked conditions
 
 
 ####		Built-in Functions			########################################
@@ -40,10 +39,6 @@ func HandleInput(viewport, event, shape_idx):
 
 
 ####		Private Functions			########################################
-func _enter(body):
-	#@TODO: if body is player, else store NPC location in GameState
-	GameState.LoadScene(dest)
-
 ####		Signal Listeners			########################################
 func _onMouseEntered():
 	super._onMouseEntered()
@@ -52,4 +47,7 @@ func _onMouseExited():
 	super._onMouseExited()
 
 func _onBodyEntered(body):
-	pass # Replace with function body.
+	if dest.get_file().length() == 0:
+		push_warning("Missing door destination: \"" + dest + "\"")
+		return
+	GameState.LoadScene(dest, destDoor)

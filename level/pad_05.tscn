@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcxnq2ddylebx"]
+
+[ext_resource type="PackedScene" uid="uid://dghutdblpc3n8" path="res://src/structure/location.tscn" id="1_oatmf"]
+[ext_resource type="Texture2D" uid="uid://cd6asy4a8nxfc" path="res://images/pad_05.png" id="2_x3b57"]
+[ext_resource type="Script" path="res://src/structure/Door.gd" id="3_ir1fm"]
+
+[sub_resource type="Gradient" id="Gradient_1rfab"]
+colors = PackedColorArray(0, 0, 0, 1, 0.631373, 0.811765, 0.831373, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dqo7n"]
+gradient = SubResource("Gradient_1rfab")
+fill_from = Vector2(0.96789, 0.605505)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jkdxr"]
+vertices = PackedVector2Array(-406, 140, -486, 116, -487, 85, -402, 98, -325, 124, -333, 175, -299, 112, -227, 98, -109, 80, 31, 71, 139, 72, 225, 84, 308, 104, 360, 144, 375, 191, 320, 222, 215, 246, 67, 259, -74, 257, -209, 240, -331, 209)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4), PackedInt32Array(6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 5, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-333, 175, -331, 209, -209, 240, -74, 257, 67, 259, 215, 246, 320, 222, 375, 191, 360, 144, 308, 104, 225, 84, 139, 72, 31, 71, -109, 80, -227, 98, -299, 112, -325, 124, -402, 98, -487, 85, -486, 116, -406, 140)])
+
+[node name="pad_01" instance=ExtResource("1_oatmf")]
+
+[node name="Sky" parent="bg" index="0"]
+scale = Vector2(15.1563, 8.44048)
+texture = SubResource("GradientTexture2D_dqo7n")
+
+[node name="Pad" type="Sprite2D" parent="bg" index="1"]
+texture = ExtResource("2_x3b57")
+
+[node name="Polygon2D" type="Polygon2D" parent="bg" index="2"]
+position = Vector2(-649, 46)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(166, 82, 209, 98, 262, 123, 306, 152, 330, 64, 277, 48, 216, 34, 165, 28)
+
+[node name="NavigationRegion2D" parent="." index="2"]
+navigation_polygon = SubResource("NavigationPolygon_jkdxr")
+
+[node name="door" type="Area2D" parent="." index="3"]
+position = Vector2(-458, 87)
+collision_mask = 2
+script = ExtResource("3_ir1fm")
+dest = "res://level/pad_01.tscn"
+destDoor = "door2"
+
+[node name="col" type="CollisionPolygon2D" parent="door" index="0"]
+polygon = PackedVector2Array(-23, -70, -21, 92, 26, 94, 50, 64, 63, -38, 25, -77)
+
+[node name="spawn" type="Marker2D" parent="door" index="1"]
+position = Vector2(121, 39)
+
+[node name="doorEnd" type="Area2D" parent="." index="4"]
+position = Vector2(39, 49)
+collision_mask = 2
+script = ExtResource("3_ir1fm")
+
+[node name="col" type="CollisionPolygon2D" parent="doorEnd" index="0"]
+polygon = PackedVector2Array(-37, -94, -49, -50, -27, 5, 36, 13, 57, -37, 52, -95, 10, -109)
+
+[node name="spawn" type="Marker2D" parent="doorEnd" index="1"]
+position = Vector2(-75, 36)
+
+[connection signal="body_entered" from="door" to="door" method="_onBodyEntered"]
+[connection signal="input_event" from="door" to="door" method="HandleInput"]
+[connection signal="mouse_entered" from="door" to="door" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door" to="door" method="_onMouseExited"]
+[connection signal="body_entered" from="doorEnd" to="doorEnd" method="_onBodyEntered"]
+[connection signal="input_event" from="doorEnd" to="doorEnd" method="HandleInput"]
+[connection signal="mouse_entered" from="doorEnd" to="doorEnd" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="doorEnd" to="doorEnd" method="_onMouseExited"]

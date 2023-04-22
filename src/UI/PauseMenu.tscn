@@ -39,6 +39,7 @@ theme_override_fonts/font = ExtResource("3_pqj6s")
 text = "RESUME"
 
 [node name="save" type="Button" parent="Cntr/VBox"]
+visible = false
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 mouse_default_cursor_shape = 2

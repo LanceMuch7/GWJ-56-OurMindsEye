@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cadvr75cy8q1y"
-path="res://.godot/imported/Underwater BG Blank.png-47f01484f677931a4939123b55271cc3.ctex"
+uid="uid://b785rny67meqc"
+path="res://.godot/imported/theEyes.png-93bafa5a0022f473f7e7ab074e79ed9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Underwater BG Blank.png"
-dest_files=["res://.godot/imported/Underwater BG Blank.png-47f01484f677931a4939123b55271cc3.ctex"]
+source_file="res://images/sprites/theEyes.png"
+dest_files=["res://.godot/imported/theEyes.png-93bafa5a0022f473f7e7ab074e79ed9b.ctex"]
 
 [params]
 

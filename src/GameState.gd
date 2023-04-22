@@ -12,22 +12,18 @@ const Cursors = {
 	Enums.CURSORS.Over: preload("res://Images/Cursors/over.png"),
 	Enums.CURSORS.Talk: preload("res://Images/Cursors/talk.png"),
 }
-var Chapter : PackedScene
-var ChapInst
+
 var CurrentScene:Node2D
+var SpawnPoint:Marker2D
+var newGame:bool = true
 
 
-func LoadScene(path:String):
-	var scn = load(path)
-	await get_tree().change_scene_to(scn)
-	CurrentScene = scn
+# Go to a new location by changing active scenes
+func LoadScene(path:String, door:String):
+	await get_tree().change_scene_to_file(path)
+	CurrentScene = get_tree().current_scene
+	await get_tree().create_timer(0.1).timeout
+	get_node("/root").move_child(CurrentScene, 0)
+	if is_instance_valid(Player.character) and is_instance_valid(CurrentScene.find_child(door)):
+		Player.character.SetPosition(CurrentScene.find_child(door).get_child(1).global_position)
 	emit_signal("changed_scene")
-	get_node("/root").move_child(ChapInst, 0)
-
-
-func _load(chapter:PackedScene):
-	get_tree().change_scene_to(chapter)
-#	yield(get_tree().create_timer(0.1), "timeout")
-	emit_signal("changed_scene")
-	ChapInst = get_tree().current_scene
-	get_node("/root").move_child(ChapInst, 0)
