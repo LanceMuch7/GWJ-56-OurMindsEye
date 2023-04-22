@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjhxxp2ugcnu2"]
+
+[ext_resource type="Script" path="res://src/girl.gd" id="1_a5jgo"]
+[ext_resource type="Texture2D" uid="uid://by2hp1aoxat0k" path="res://images/GenLimni.png" id="2_00no7"]
+[ext_resource type="Texture2D" uid="uid://djt56154d0c2e" path="res://images/sprites/shadow.png" id="2_o6rmf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fpyit"]
+height = 60.0
+
+[node name="Girl" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_a5jgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("CapsuleShape2D_fpyit")
+
+[node name="body" type="Node2D" parent="."]
+position = Vector2(0, -67)
+
+[node name="Shadow" type="Sprite2D" parent="body"]
+position = Vector2(0, 63)
+scale = Vector2(0.282051, 0.282051)
+texture = ExtResource("2_o6rmf")
+
+[node name="chest" type="Sprite2D" parent="body"]
+position = Vector2(0, 16)
+scale = Vector2(0.0981481, 0.0981481)
+texture = ExtResource("2_00no7")
+
+[node name="anim" type="AnimationPlayer" parent="body"]
+
+[node name="navAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 15.0

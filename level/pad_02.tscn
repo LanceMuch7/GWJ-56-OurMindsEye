@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0jxuvhhow87x"]
+
+[ext_resource type="PackedScene" uid="uid://dghutdblpc3n8" path="res://src/structure/location.tscn" id="1_i3x7s"]
+[ext_resource type="Texture2D" uid="uid://d2h7wcv8jr12l" path="res://images/pad_02.png" id="2_tj8rt"]
+[ext_resource type="Script" path="res://src/structure/Door.gd" id="9_tr020"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jkdxr"]
+vertices = PackedVector2Array(335.178, 48.9272, 419, 31, 423, 46, 351, 87, 288, 58, 308, 121, -65, 4, -61, -26, -30, -33, -17, -7, 39, 249, -114, 225, -194, 195, -250, 131, -230, 69, -161, 33, 277, 196, 182, 240, 45, -11, 152, 4, 238, 30)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14, 15, 6, 10), PackedInt32Array(5, 16, 17, 10, 9, 18, 19, 20, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-230, 69, -250, 131, -194, 195, -114, 225, 39, 249, 182, 240, 277, 196, 308, 121, 351, 87, 423, 46, 419, 31, 335.178, 48.9272, 288, 58, 238, 30, 152, 4, 45, -11, -17, -7, -30, -33, -61, -26, -65, 4, -161, 33)])
+
+[node name="pad_01" instance=ExtResource("1_i3x7s")]
+
+[node name="Pad" type="Sprite2D" parent="bg" index="1"]
+texture = ExtResource("2_tj8rt")
+
+[node name="Polygon2D" type="Polygon2D" parent="bg" index="2"]
+position = Vector2(-47, -2)
+color = Color(0.466667, 0.309804, 0.211765, 1)
+polygon = PackedVector2Array(14, -23, -19, -19, -23, -10, -25, 6, 28, -3, 20, -18)
+
+[node name="Polygon2D2" type="Polygon2D" parent="bg" index="3"]
+position = Vector2(329, 83)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(-48, -35, -12, 66, 36, 9, 88, -23, 118, -38, 147, -42, 135, -55, 106, -58, 76, -56, 26, -50)
+
+[node name="NavigationRegion2D" parent="." index="2"]
+navigation_polygon = SubResource("NavigationPolygon_jkdxr")
+
+[node name="door" type="Area2D" parent="." index="3"]
+position = Vector2(-46, -62)
+collision_mask = 2
+script = ExtResource("9_tr020")
+dest = "res://level/pad_07.tscn"
+destDoor = "door"
+
+[node name="col" type="CollisionPolygon2D" parent="door" index="0"]
+polygon = PackedVector2Array(-13, -24, -28, 6, -27, 46, 26, 37, 26, 3, 10, -26)
+
+[node name="spawn" type="Marker2D" parent="door" index="1"]
+position = Vector2(44, 67)
+
+[node name="door2" type="Area2D" parent="." index="4"]
+position = Vector2(412, 124)
+collision_mask = 2
+script = ExtResource("9_tr020")
+dest = "res://level/pad_01.tscn"
+destDoor = "door"
+
+[node name="col" type="CollisionPolygon2D" parent="door2" index="0"]
+polygon = PackedVector2Array(-33, -108, -17, -26, 35, -13, 68, -10, 68, -158, 19, -141)
+
+[node name="spawn" type="Marker2D" parent="door2" index="1"]
+position = Vector2(-89, -42)
+
+[connection signal="body_entered" from="door" to="door" method="_onBodyEntered"]
+[connection signal="input_event" from="door" to="door" method="HandleInput"]
+[connection signal="mouse_entered" from="door" to="door" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door" to="door" method="_onMouseExited"]
+[connection signal="body_entered" from="door2" to="door2" method="_onBodyEntered"]
+[connection signal="input_event" from="door2" to="door2" method="HandleInput"]
+[connection signal="mouse_entered" from="door2" to="door2" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door2" to="door2" method="_onMouseExited"]

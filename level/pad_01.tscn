@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://dm8tds01r6y8i"]
+
+[ext_resource type="PackedScene" uid="uid://dghutdblpc3n8" path="res://src/structure/location.tscn" id="1_5bqkj"]
+[ext_resource type="Texture2D" uid="uid://ctn4a0duw2t7w" path="res://images/pad_01.png" id="2_6wcle"]
+[ext_resource type="Texture2D" uid="uid://basbimsjtkmhf" path="res://images/sprites/garden_sign_crop_01a_g1.png" id="3_2c8xg"]
+[ext_resource type="Texture2D" uid="uid://b3adik48r85p4" path="res://images/sprites/firebog_puddle_1.png" id="4_bacns"]
+[ext_resource type="Texture2D" uid="uid://ky4qw361r0ur" path="res://images/sprites/soil_debris2.png" id="8_ccc7b"]
+[ext_resource type="Texture2D" uid="uid://bb4xiekgb2cut" path="res://images/sprites/bridge.png" id="9_6axot"]
+[ext_resource type="Script" path="res://src/structure/Door.gd" id="9_bgydx"]
+[ext_resource type="Texture2D" uid="uid://da0gchkxrupc0" path="res://images/sprites/soil_debris3.png" id="9_fcaev"]
+[ext_resource type="Texture2D" uid="uid://b785rny67meqc" path="res://images/sprites/theEyes.png" id="10_80uqf"]
+[ext_resource type="Texture2D" uid="uid://bqndtpj31xtre" path="res://images/sprites/lilypad_dried.png" id="11_pjyno"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jkdxr"]
+vertices = PackedVector2Array(-297, -47, -380, -88, -364, -101, -285, -63, -202, -17, -196, -34, -92, 6, 277, 92, 392, 105, 376, 139, 239, 118, -81, -15, 80, -45, 194, -18, 250, 2, 289, 38, 135, 140, 31, 128, -34, 106, -69, 87, -98, 63)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(6, 5, 11), PackedInt32Array(6, 11, 12, 13, 14, 15, 7, 10, 16, 17, 18, 19, 20)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-92, 6, -98, 63, -69, 87, -34, 106, 31, 128, 135, 140, 239, 118, 376, 139, 392, 105, 277, 92, 289, 38, 250, 2, 194, -18, 80, -45, -81, -15, -196, -34, -285, -63, -364, -101, -380, -88, -297, -47, -202, -17)])
+
+[node name="pad_01" instance=ExtResource("1_5bqkj")]
+
+[node name="Pad" type="Sprite2D" parent="bg" index="1"]
+texture = ExtResource("2_6wcle")
+
+[node name="GardenSignCrop01aG1" type="Sprite2D" parent="bg" index="2"]
+position = Vector2(115, -44)
+scale = Vector2(0.77451, 0.77451)
+texture = ExtResource("3_2c8xg")
+
+[node name="FirebogPuddle1" type="Sprite2D" parent="bg" index="3"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(-343, 50)
+scale = Vector2(0.73913, 1.78261)
+texture = ExtResource("4_bacns")
+
+[node name="FirebogPuddle2" type="Sprite2D" parent="bg" index="4"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(-215, 196)
+scale = Vector2(1.05559, 2.65217)
+texture = ExtResource("4_bacns")
+
+[node name="FirebogPuddle3" type="Sprite2D" parent="bg" index="5"]
+modulate = Color(0.533333, 0.568627, 0.411765, 1)
+position = Vector2(71.144, -123.5)
+scale = Vector2(0.395079, 0.673913)
+texture = ExtResource("4_bacns")
+
+[node name="SoilDebris2" type="Sprite2D" parent="bg" index="6"]
+position = Vector2(311, 219)
+texture = ExtResource("8_ccc7b")
+
+[node name="SoilDebris3" type="Sprite2D" parent="bg" index="7"]
+position = Vector2(-165, 106)
+texture = ExtResource("9_fcaev")
+
+[node name="SoilDebris4" type="Sprite2D" parent="bg" index="8"]
+position = Vector2(351, -48)
+texture = ExtResource("9_fcaev")
+
+[node name="SoilDebris5" type="Sprite2D" parent="bg" index="9"]
+position = Vector2(-81, -92)
+texture = ExtResource("8_ccc7b")
+
+[node name="Polygon2D" type="Polygon2D" parent="bg" index="10"]
+position = Vector2(-357, -97)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(-7, -17, -57, 0, 25, 4, 97, 32, 175, 74, 251, 133, 335, 72, 242, 28, 159, -2, 59, -20)
+
+[node name="Polygon2D2" type="Polygon2D" parent="bg" index="11"]
+position = Vector2(271, 121)
+color = Color(0.235294, 0.509804, 0.207843, 1)
+polygon = PackedVector2Array(20, -27, -51, 12, 33, 17, 113, 34, 176, 64, 220, 103, 234, -4, 181, -19, 122, -27, 58, -30)
+
+[node name="TheEyes" type="Sprite2D" parent="bg" index="12"]
+position = Vector2(90, -120)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("10_80uqf")
+
+[node name="LilypadDried" type="Sprite2D" parent="bg" index="13"]
+position = Vector2(178, 241)
+texture = ExtResource("11_pjyno")
+
+[node name="LilypadDried2" type="Sprite2D" parent="bg" index="14"]
+position = Vector2(344, 26)
+scale = Vector2(0.461538, 0.461538)
+texture = ExtResource("11_pjyno")
+
+[node name="LilypadDried4" type="Sprite2D" parent="bg" index="15"]
+position = Vector2(368.603, 56.5)
+scale = Vector2(0.282051, 0.282051)
+texture = ExtResource("11_pjyno")
+
+[node name="LilypadDried3" type="Sprite2D" parent="bg" index="16"]
+position = Vector2(391.603, 14.5)
+scale = Vector2(0.282051, 0.282051)
+texture = ExtResource("11_pjyno")
+
+[node name="Bridge" type="Sprite2D" parent="bg" index="17"]
+position = Vector2(-250, -49)
+rotation = -2.91613
+scale = Vector2(0.803219, -0.803219)
+texture = ExtResource("9_6axot")
+
+[node name="NavigationRegion2D" parent="." index="2"]
+navigation_polygon = SubResource("NavigationPolygon_jkdxr")
+
+[node name="door" type="Area2D" parent="." index="3"]
+position = Vector2(-360, -121)
+collision_mask = 2
+script = ExtResource("9_bgydx")
+dest = "res://level/pad_02.tscn"
+destDoor = "door2"
+
+[node name="col" type="CollisionPolygon2D" parent="door" index="0"]
+polygon = PackedVector2Array(-120, -56, -120, 62, -25, 66, 33, 50, 68, 4, 68, -61)
+
+[node name="spawn" type="Marker2D" parent="door" index="1"]
+position = Vector2(107, 77)
+
+[node name="door2" type="Area2D" parent="." index="4"]
+position = Vector2(412, 124)
+collision_mask = 2
+script = ExtResource("9_bgydx")
+dest = "res://level/pad_05.tscn"
+destDoor = "door"
+
+[node name="col" type="CollisionPolygon2D" parent="door2" index="0"]
+polygon = PackedVector2Array(-32, -94, -50, -3, -52, 46, -13, 76, 66, 110, 66, -113, 33, -116)
+
+[node name="spawn" type="Marker2D" parent="door2" index="1"]
+position = Vector2(-88, -8)
+
+[connection signal="body_entered" from="door" to="door" method="_onBodyEntered"]
+[connection signal="input_event" from="door" to="door" method="HandleInput"]
+[connection signal="mouse_entered" from="door" to="door" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door" to="door" method="_onMouseExited"]
+[connection signal="body_entered" from="door2" to="door2" method="_onBodyEntered"]
+[connection signal="input_event" from="door2" to="door2" method="HandleInput"]
+[connection signal="mouse_entered" from="door2" to="door2" method="_onMouseEntered"]
+[connection signal="mouse_exited" from="door2" to="door2" method="_onMouseExited"]

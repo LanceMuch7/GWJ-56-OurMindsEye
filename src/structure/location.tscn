@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dghutdblpc3n8"]
+
+[ext_resource type="Script" path="res://src/structure/location.gd" id="1_001u5"]
+[ext_resource type="PackedScene" uid="uid://bjhxxp2ugcnu2" path="res://src/girl.tscn" id="2_7pgxt"]
+[ext_resource type="PackedScene" uid="uid://14e67d0dq1ca" path="res://src/UI/PauseMenu.tscn" id="3_p6wnb"]
+
+[sub_resource type="Gradient" id="Gradient_dd6db"]
+colors = PackedColorArray(0, 0, 0, 1, 0.631373, 0.811765, 0.831373, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ons2q"]
+gradient = SubResource("Gradient_dd6db")
+fill_from = Vector2(0.972477, 0.362385)
+
+[node name="Location" type="Node2D"]
+script = ExtResource("1_001u5")
+
+[node name="bg" type="Node2D" parent="."]
+
+[node name="Sky" type="Sprite2D" parent="bg"]
+scale = Vector2(15.0313, 8.46875)
+texture = SubResource("GradientTexture2D_ons2q")
+
+[node name="props" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+
+[node name="Girl" parent="." instance=ExtResource("2_7pgxt")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="fore" type="Node2D" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_p6wnb")]
+visible = false

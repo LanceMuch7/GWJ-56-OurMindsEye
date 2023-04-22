@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+*.blend1
+*.pck
+*.exe
+*.translation
+Exports/*

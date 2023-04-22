@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://14e67d0dq1ca"]
+
+[ext_resource type="Script" path="res://src/UI/PauseMenu.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://bxcdpgyuyhucb" path="res://fonts/VERDANAZ.TTF" id="2_c5p1i"]
+[ext_resource type="FontFile" uid="uid://du3eveaqjmvtq" path="res://fonts/VERDANA.TTF" id="3_pqj6s"]
+
+[node name="PauseMenu" type="ColorRect"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.156863, 0.156863, 0.156863, 0.392157)
+script = ExtResource("2")
+
+[node name="Cntr" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="Cntr"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Cntr/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_c5p1i")
+text = "GAME PAUSED"
+horizontal_alignment = 1
+
+[node name="resume" type="Button" parent="Cntr/VBox"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_pqj6s")
+text = "RESUME"
+
+[node name="save" type="Button" parent="Cntr/VBox"]
+visible = false
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_pqj6s")
+text = "SAVE GAME"
+
+[node name="options" type="Button" parent="Cntr/VBox"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_pqj6s")
+text = "OPTIONS"
+
+[node name="quit" type="Button" parent="Cntr/VBox"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_pqj6s")
+text = "QUIT TO DESKTOP"
+
+[connection signal="pressed" from="Cntr/VBox/resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Cntr/VBox/save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Cntr/VBox/options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Cntr/VBox/quit" to="." method="_on_Quit_pressed"]
